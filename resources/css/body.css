@@ -1,0 +1,6 @@
+body {
+    background-image: url('../images/background.jpg'); /* Jalur relatif ke gambar */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
