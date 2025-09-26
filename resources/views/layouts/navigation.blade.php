@@ -1,8 +1,8 @@
-<nav x-data="{ open: false }" class="bg-blue-900 border-b border-blue-800">
+<nav x-data="{ open: false }" class="bg-blue-900 border-b border-blue-800" style="background-color:rgb(56, 56, 56)">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
+        <div class="flex justify-between h-16" >
+            <div class="flex" >
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
@@ -12,7 +12,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-2 sm:-my-px sm:ms-10 sm:flex">
-                    <a href="{{ route('notes.index') }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md text-blue-100 hover:text-white">Notes</a>
+                    <a href="{{ route('notes.index') }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md text-blue-100" style="color: #ffffff">Notes</a>
                 </div>
             </div>
 
@@ -20,7 +20,7 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-blue-100 hover:text-white focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-blue-100 hover:text-white focus:outline-none transition ease-in-out duration-150" style="color: #ffffff">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ms-1">
@@ -32,15 +32,15 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
+                        <x-dropdown-link :href="route('profile.edit')"    style="color:rgb(18, 17, 17)" >
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" action="{{ route('logout') }}" >
                             @csrf
 
-                            <x-dropdown-link :href="route('logout')"
+                            <x-dropdown-link :href="route('logout')"  style="color:rgb(18, 16, 16)"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
