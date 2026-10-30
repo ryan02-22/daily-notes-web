@@ -58,7 +58,7 @@ class NoteController extends Controller
         $data = $request->validated();
         $data['user_id'] = Auth::id();
         Note::create($data);
-        return redirect()->route('notes.index')->with('status', 'Note created');
+        return redirect()->route('notes.index')->with('status', 'Catatan berhasil dibuat.');
     }
 
     /**
@@ -86,7 +86,7 @@ class NoteController extends Controller
     {
         $this->authorize('update', $note);
         $note->update($request->validated());
-        return redirect()->route('notes.index')->with('status', 'Note updated');
+        return redirect()->route('notes.index')->with('status', 'Catatan berhasil diperbarui.');
     }
 
     /**
@@ -96,6 +96,6 @@ class NoteController extends Controller
     {
         $this->authorize('delete', $note);
         $note->delete();
-        return redirect()->route('notes.index')->with('status', 'Note deleted');
+        return redirect()->route('notes.index')->with('status', 'Catatan berhasil dihapus.');
     }
 }

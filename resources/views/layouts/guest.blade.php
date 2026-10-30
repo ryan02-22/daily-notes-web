@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Daily Notes</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -14,17 +14,33 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+    <body class="font-sans antialiased auth-page">
+        <main class="auth-shell">
+            <aside class="auth-aside">
+                <a class="brand" href="{{ url('/') }}">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M7 3.75h7.1L19 8.6v11.65H7a2 2 0 0 1-2-2v-12.5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                            <path d="M14 4v5h5M8.5 13h7M8.5 16.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span>Daily Notes</span>
                 </a>
-            </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-gradient-to-br from-blue-900 to-slate-900 shadow-md overflow-hidden sm:rounded-xl border border-blue-800">
+                <div class="auth-aside-content">
+                    <p class="eyebrow">Ruang kecil untuk harimu</p>
+                    <h1 class="auth-aside-title">Sediakan ruang untuk pikiranmu.</h1>
+                    <p class="auth-aside-copy">Tempat sederhana untuk menyimpan hal-hal kecil yang ingin kamu ingat.</p>
+                </div>
+
+                <div class="auth-note">
+                    ✨ &nbsp;Ide kecil bisa jadi sesuatu yang berarti. Simpan untuk nanti.
+                </div>
+            </aside>
+
+            <section class="auth-content">
                 {{ $slot }}
-            </div>
-        </div>
+            </section>
+        </main>
     </body>
 </html>
